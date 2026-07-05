@@ -1,0 +1,5 @@
+com\BrazaON\controller\MovieController.class
+com\BrazaON\controller\ViewController.class
+com\BrazaON\model\Movie.class
+com\BrazaON\service\TmdbService.class
+com\BrazaON\BrazaONApplication.class

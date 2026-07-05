@@ -1,0 +1,31 @@
+<div th:fragment="menu">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand fs-3" href="/">BrazaON</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/filmes">Filmes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/series">Séries</a>
+                    </li>
+                </ul>
+                <form class="d-flex" action="/busca" method="get">
+                    <div class="input-group">
+                        <input class="form-control border-0" type="search" name="q" placeholder="Buscar no BrazaON..." required>
+                        <button class="btn btn-outline-dark bg-white border-0" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>

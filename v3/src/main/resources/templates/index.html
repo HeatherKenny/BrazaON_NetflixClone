@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrazaON - Cinema e Séries do Brasil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div th:replace="~{fragments/menu :: menu}"></div>
+
+    <div class="jumbotron-bg">
+        <div class="container">
+            <h1 class="display-3 fw-bold">BrazaON</h1>
+            <p class="lead mx-auto w-75">Tudo o que o Brasil produz de melhor em Filmes e Séries. Agora com seções exclusivas!</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="/filmes" class="btn btn-primary btn-lg shadow-sm"><i class="bi bi-film"></i> Ver Filmes</a>
+                <a href="/series" class="btn btn-outline-dark btn-lg shadow-sm bg-white"><i class="bi bi-tv"></i> Ver Séries</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <section class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3><i class="bi bi-trophy-fill text-warning"></i> Top 10 Filmes</h3>
+                <a href="/filmes" class="text-decoration-none">Ver todos <i class="bi bi-arrow-right"></i></a>
+            </div>
+            <div class="row g-4 flex-nowrap overflow-auto pb-3">
+                <div th:each="movie : ${top10Movies}" class="col-6 col-md-4 col-lg-2">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img th:src="${movie.poster_path != null ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'https://via.placeholder.com/500x750?text=Sem+Poster'}" class="card-img-top" th:alt="${movie.title}">
+                        <div class="card-body p-2 text-center">
+                            <h6 class="card-title text-truncate mb-1" th:text="${movie.title}"></h6>
+                            <span class="badge bg-warning" th:text="${movie.getDisplayRating()}"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3><i class="bi bi-clock-fill text-success"></i> Lançamentos em filmes e series</h3>
+            </div>
+            <div class="row g-4">
+                <div th:each="movie : ${recemMovies}" class="col-6 col-md-3 col-lg-2">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img th:src="${movie.poster_path != null ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'https://via.placeholder.com/500x750?text=Sem+Poster'}" class="card-img-top" th:alt="${movie.title}">
+                        <div class="card-body p-2 text-center">
+                            <h6 class="card-title text-truncate mb-1" th:text="${movie.title}"></h6>
+                            <small class="text-muted" th:text="${movie.getDisplayDate()}"></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer th:fragment="footer" class="py-5 text-center mt-auto">
+        <div class="container">
+            <p class="mb-1 fw-bold">Orgulho de ser Brasileiro</p>
+            <p class="text-muted small">Dados fornecidos pela API do TMDb. Filmes e Séries nacionais em destaque.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
