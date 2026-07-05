@@ -23,5 +23,3 @@ Tanto para Filmes quanto para Séries, agora temos:
 - **Modelo Genérico**: O modelo `Movie` foi atualizado para suportar campos de Séries (`name`, `first_air_date`).
 - **TmdbService**: Novos métodos para buscar Top 10, Premiados e Recém Adicionados usando filtros avançados de `sort_by` e `vote_count`.
 - **Thymeleaf**: Uso de fragmentos e novos templates (`catalogo.html`, `busca.html`) para uma navegação fluida.
-
-Divirta-se explorando o melhor do Brasil no **BrazaON V5**!
