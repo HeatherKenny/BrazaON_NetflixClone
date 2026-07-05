@@ -1,6 +1,6 @@
-# BrazaON - V5: O Cinema Brasileiro Completo
+# BrazaON - V3: O Cinema Brasileiro Completo
 
-A versão **V5** é a mais robusta até agora, trazendo uma separação clara entre **Filmes** e **Séries**, além de organizar o conteúdo em seções temáticas.
+A versão **V3** é a mais robusta até agora, trazendo uma separação clara entre **Filmes** e **Séries**, além de organizar o conteúdo em seções temáticas.
 
 ## Novas Seções
 
